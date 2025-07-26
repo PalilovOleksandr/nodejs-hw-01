@@ -4,8 +4,8 @@ import { readContacts } from '../utils/readContacts.js';
 import { writeContacts } from '../utils/writeContacts.js';
 
 export const addOneContact = async () => {
+  let existingsContacts = await readContacts();
   try {
-    let existingsContacts = await readContacts();
     const user = faker.helpers.multiple(createFakeContact, {
       count: 1,
     });
